@@ -7,7 +7,8 @@ defmodule TextClient.Player do
     exit_with_message("You WON!")
   end
 
-  def play(%State{tally: %{game_state: :lost}}) do
+  def play(%State{tally: %{game_state: :lost}, game_service: %{letters: actualWord}}) do
+    IO.puts "The word was #{actualWord}"
     exit_with_message("Sorry, you lost. :-(")
   end
 
