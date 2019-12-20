@@ -4,11 +4,7 @@ defmodule Hangman do
 
   defdelegate new_game(), to: Game
   defdelegate new_game(word), to: Game
-
-  def make_move(game, guess) do
-    game = Game.make_move(game, guess)
-    {game, tally(game)}
-  end
+  defdelegate make_move(game, guess), to: Game
   defdelegate tally(game), to: Game
 
 end
